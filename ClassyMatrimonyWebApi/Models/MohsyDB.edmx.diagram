@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf218f7cb46f42f5a708b9c47f1e795a" Name="Diagram1">
+        <EntityTypeShape EntityType="MohsyDBModel.CasteMaster" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.CityMaster" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.CountryMaster" Width="1.5" PointX="0.75" PointY="0.875" />
+        <EntityTypeShape EntityType="MohsyDBModel.CourseMaster" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.DesignationMaster" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.DivisionMaster" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.EmployeeInMaster" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.ITConfigSetting" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.MohsyStaff" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.MotherTongueMaster" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.PersonalDetail" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.ReligionMaster" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.StateMaster" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="MohsyDBModel.TemplateMaster" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.UserDetail" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.UserPhoto" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MohsyDBModel.UserSetting" Width="1.5" PointX="10.75" PointY="4.75" />
+        <AssociationConnector Association="MohsyDBModel.FK_StateMaster_CountryMaster" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MohsyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CasteMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ReligionId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CityMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateID" Type="int" />
+          <Property Name="IsAcitve" Type="bit" />
+        </EntityType>
+        <EntityType Name="CountryMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryCode" Type="varchar" MaxLength="5" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="CourseMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="DesignationMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DivisionMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="EmployeeInMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="ITConfigSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Value" Type="nvarchar" MaxLength="250" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="UpdatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MohsyStaffs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="150" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="150" />
+          <Property Name="Role" Type="nvarchar" MaxLength="150" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="Password" Type="nvarchar" MaxLength="150" />
+          <Property Name="TargetAmount" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="MotherTongueMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="order" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="PersonalDetails">
+          <Key>
+            <PropertyRef Name="PersonDetailsID" />
+          </Key>
+          <Property Name="PersonDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserDetailsID" Type="int" Nullable="false" />
+          <Property Name="Religion" Type="nvarchar" MaxLength="150" />
+          <Property Name="Caste" Type="nvarchar" MaxLength="150" />
+          <Property Name="SubCaste" Type="nvarchar" MaxLength="150" />
+          <Property Name="EatingHabit" Type="nvarchar" MaxLength="150" />
+          <Property Name="Smoking" Type="nvarchar" MaxLength="150" />
+          <Property Name="DrinkType" Type="nvarchar" MaxLength="150" />
+          <Property Name="LifeStyle" Type="nvarchar" MaxLength="150" />
+          <Property Name="Hobbies" Type="nvarchar" MaxLength="150" />
+          <Property Name="EducationalQualificationId" Type="nvarchar" MaxLength="150" />
+          <Property Name="NameoftheInstitution" Type="nvarchar" MaxLength="150" />
+          <Property Name="Occupation" Type="nvarchar" MaxLength="150" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="150" />
+          <Property Name="Income" Type="nvarchar" MaxLength="150" />
+          <Property Name="BusinessType" Type="nvarchar" MaxLength="150" />
+          <Property Name="Aboutmyself" Type="nvarchar(max)" />
+          <Property Name="FamilyType" Type="nvarchar" MaxLength="150" />
+          <Property Name="FamilyValues" Type="nvarchar" MaxLength="150" />
+          <Property Name="FamilyStatus" Type="nvarchar" MaxLength="150" />
+          <Property Name="FamilyOrigin" Type="nvarchar" MaxLength="150" />
+          <Property Name="NoofSiblings" Type="nvarchar" MaxLength="150" />
+          <Property Name="NOofmarriedSiblings" Type="nvarchar" MaxLength="150" />
+          <Property Name="Fathersoccupation" Type="nvarchar" MaxLength="150" />
+          <Property Name="Mothersoccupation" Type="nvarchar" MaxLength="150" />
+          <Property Name="FamilyBusinesstype" Type="nvarchar" MaxLength="150" />
+          <Property Name="FamilyBusinessTenure" Type="nvarchar" MaxLength="150" />
+          <Property Name="AboutmyFamily" Type="nvarchar" MaxLength="450" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="Manglik" Type="nvarchar" MaxLength="150" />
+          <Property Name="HoroscopeAvailable" Type="nvarchar" MaxLength="150" />
+          <Property Name="Raasi" Type="nvarchar" MaxLength="150" />
+          <Property Name="Star" Type="nvarchar" MaxLength="150" />
+          <Property Name="Gothram" Type="nvarchar" MaxLength="150" />
+          <Property Name="Turnover" Type="nvarchar" MaxLength="150" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="ReligionMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StateMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="TemplateMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="250" />
+          <Property Name="Body" Type="nvarchar(max)" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="UserDetails">
+          <Key>
+            <PropertyRef Name="UserDetailsID" />
+          </Key>
+          <Property Name="UserDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="150" />
+          <Property Name="MatrimonyId" Type="nvarchar" MaxLength="150" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address" Type="nvarchar" MaxLength="350" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="Password" Type="nvarchar" MaxLength="150" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="BodyType" Type="nvarchar" MaxLength="150" />
+          <Property Name="Complexion" Type="nvarchar" MaxLength="150" />
+          <Property Name="PhysicalStatus" Type="nvarchar" MaxLength="150" />
+          <Property Name="Height" Type="nvarchar" MaxLength="150" />
+          <Property Name="Weight" Type="nvarchar" MaxLength="150" />
+          <Property Name="MaritalStatus" Type="nvarchar" MaxLength="150" />
+          <Property Name="NoofChildren" Type="nvarchar" MaxLength="150" />
+          <Property Name="MotherTongueId" Type="int" />
+          <Property Name="LanguagesKnown" Type="nvarchar" MaxLength="150" />
+          <Property Name="ResidingCountryId" Type="int" />
+          <Property Name="ResidingState" Type="nvarchar" MaxLength="150" />
+          <Property Name="ResidingCity" Type="nvarchar" MaxLength="150" />
+          <Property Name="CitizenshipId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsUpgraded" Type="bit" />
+          <Property Name="UpgradeId" Type="int" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="UserPhotos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserDetailId" Type="int" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="Path" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsDefault" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="UserSettings">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserDetailsID" Type="int" />
+          <Property Name="WhoViewedProfile" Type="bit" />
+          <Property Name="NewMatchingProfile" Type="bit" />
+          <Property Name="WhoShortlistedMe" Type="bit" />
+          <Property Name="AllNotifications" Type="bit" />
+          <Property Name="SMSAlert" Type="bit" />
+          <Property Name="EmailAlert" Type="bit" />
+          <Property Name="RequestViewPhoto" Type="bit" />
+          <Property Name="PhotoVisibleonAcceptance" Type="bit" />
+          <Property Name="Visibletoall" Type="bit" />
+          <Property Name="PhotoPassword" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="VisibleOnlytoSpecificMembers" Type="bit" />
+          <Property Name="ProtectPhotoPwdMode" Type="bit" />
+        </EntityType>
+        <Association Name="FK_StateMaster_CountryMaster">
+          <End Role="CountryMaster" Type="Self.CountryMaster" Multiplicity="0..1" />
+          <End Role="StateMaster" Type="Self.StateMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CountryMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StateMaster">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MohsyDBModelStoreContainer">
+          <EntitySet Name="CasteMaster" EntityType="Self.CasteMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CityMaster" EntityType="Self.CityMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CourseMaster" EntityType="Self.CourseMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DesignationMaster" EntityType="Self.DesignationMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DivisionMaster" EntityType="Self.DivisionMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeInMaster" EntityType="Self.EmployeeInMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITConfigSettings" EntityType="Self.ITConfigSettings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MohsyStaffs" EntityType="Self.MohsyStaffs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MotherTongueMaster" EntityType="Self.MotherTongueMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalDetails" EntityType="Self.PersonalDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReligionMaster" EntityType="Self.ReligionMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StateMaster" EntityType="Self.StateMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TemplateMaster" EntityType="Self.TemplateMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPhotos" EntityType="Self.UserPhotos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserSettings" EntityType="Self.UserSettings" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_StateMaster_CountryMaster" Association="Self.FK_StateMaster_CountryMaster">
+            <End Role="CountryMaster" EntitySet="CountryMaster" />
+            <End Role="StateMaster" EntitySet="StateMaster" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MohsyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MohsyDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CasteMasters" EntityType="MohsyDBModel.CasteMaster" />
+          <EntitySet Name="CityMasters" EntityType="MohsyDBModel.CityMaster" />
+          <EntitySet Name="CountryMasters" EntityType="MohsyDBModel.CountryMaster" />
+          <EntitySet Name="CourseMasters" EntityType="MohsyDBModel.CourseMaster" />
+          <EntitySet Name="DesignationMasters" EntityType="MohsyDBModel.DesignationMaster" />
+          <EntitySet Name="DivisionMasters" EntityType="MohsyDBModel.DivisionMaster" />
+          <EntitySet Name="EmployeeInMasters" EntityType="MohsyDBModel.EmployeeInMaster" />
+          <EntitySet Name="ITConfigSettings" EntityType="MohsyDBModel.ITConfigSetting" />
+          <EntitySet Name="MohsyStaffs" EntityType="MohsyDBModel.MohsyStaff" />
+          <EntitySet Name="MotherTongueMasters" EntityType="MohsyDBModel.MotherTongueMaster" />
+          <EntitySet Name="PersonalDetails" EntityType="MohsyDBModel.PersonalDetail" />
+          <EntitySet Name="ReligionMasters" EntityType="MohsyDBModel.ReligionMaster" />
+          <EntitySet Name="StateMasters" EntityType="MohsyDBModel.StateMaster" />
+          <EntitySet Name="TemplateMasters" EntityType="MohsyDBModel.TemplateMaster" />
+          <EntitySet Name="UserDetails" EntityType="MohsyDBModel.UserDetail" />
+          <EntitySet Name="UserPhotos" EntityType="MohsyDBModel.UserPhoto" />
+          <EntitySet Name="UserSettings" EntityType="MohsyDBModel.UserSetting" />
+          <AssociationSet Name="FK_StateMaster_CountryMaster" Association="MohsyDBModel.FK_StateMaster_CountryMaster">
+            <End Role="CountryMaster" EntitySet="CountryMasters" />
+            <End Role="StateMaster" EntitySet="StateMasters" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CasteMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ReligionId" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CityMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StateID" Type="Int32" />
+          <Property Name="IsAcitve" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CountryMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="StateMasters" Relationship="MohsyDBModel.FK_StateMaster_CountryMaster" FromRole="CountryMaster" ToRole="StateMaster" />
+        </EntityType>
+        <EntityType Name="CourseMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="DesignationMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DivisionMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="EmployeeInMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ITConfigSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MohsyStaff">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Designation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TargetAmount" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="MotherTongueMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="order" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="PersonalDetail">
+          <Key>
+            <PropertyRef Name="PersonDetailsID" />
+          </Key>
+          <Property Name="PersonDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserDetailsID" Type="Int32" Nullable="false" />
+          <Property Name="Religion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Caste" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SubCaste" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="EatingHabit" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Smoking" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DrinkType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="LifeStyle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Hobbies" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="EducationalQualificationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NameoftheInstitution" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Occupation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Designation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Income" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Aboutmyself" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FamilyType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FamilyValues" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FamilyStatus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FamilyOrigin" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NoofSiblings" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NOofmarriedSiblings" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Fathersoccupation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Mothersoccupation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FamilyBusinesstype" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FamilyBusinessTenure" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AboutmyFamily" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="Manglik" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="HoroscopeAvailable" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Raasi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Star" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Gothram" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Turnover" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ReligionMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StateMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="CountryMaster" Relationship="MohsyDBModel.FK_StateMaster_CountryMaster" FromRole="StateMaster" ToRole="CountryMaster" />
+        </EntityType>
+        <EntityType Name="TemplateMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserDetailsID" />
+          </Key>
+          <Property Name="UserDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MatrimonyId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="BodyType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Complexion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PhysicalStatus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Height" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NoofChildren" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MotherTongueId" Type="Int32" />
+          <Property Name="LanguagesKnown" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ResidingCountryId" Type="Int32" />
+          <Property Name="ResidingState" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ResidingCity" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CitizenshipId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsUpgraded" Type="Boolean" />
+          <Property Name="UpgradeId" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="MobileNo" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserPhoto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserDetailId" Type="Int32" />
+          <Property Name="FileName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="Path" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsDefault" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="UserSetting">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserDetailsID" Type="Int32" />
+          <Property Name="WhoViewedProfile" Type="Boolean" />
+          <Property Name="NewMatchingProfile" Type="Boolean" />
+          <Property Name="WhoShortlistedMe" Type="Boolean" />
+          <Property Name="AllNotifications" Type="Boolean" />
+          <Property Name="SMSAlert" Type="Boolean" />
+          <Property Name="EmailAlert" Type="Boolean" />
+          <Property Name="RequestViewPhoto" Type="Boolean" />
+          <Property Name="PhotoVisibleonAcceptance" Type="Boolean" />
+          <Property Name="Visibletoall" Type="Boolean" />
+          <Property Name="PhotoPassword" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="VisibleOnlytoSpecificMembers" Type="Boolean" />
+          <Property Name="ProtectPhotoPwdMode" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_StateMaster_CountryMaster">
+          <End Type="MohsyDBModel.CountryMaster" Role="CountryMaster" Multiplicity="0..1" />
+          <End Type="MohsyDBModel.StateMaster" Role="StateMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CountryMaster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StateMaster">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MohsyDBModelStoreContainer" CdmEntityContainer="MohsyDBEntities">
+          <EntitySetMapping Name="CasteMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.CasteMaster">
+              <MappingFragment StoreEntitySet="CasteMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ReligionId" ColumnName="ReligionId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CityMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.CityMaster">
+              <MappingFragment StoreEntitySet="CityMaster">
+                <ScalarProperty Name="IsAcitve" ColumnName="IsAcitve" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CountryMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.CountryMaster">
+              <MappingFragment StoreEntitySet="CountryMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.CourseMaster">
+              <MappingFragment StoreEntitySet="CourseMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DesignationMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.DesignationMaster">
+              <MappingFragment StoreEntitySet="DesignationMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DivisionMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.DivisionMaster">
+              <MappingFragment StoreEntitySet="DivisionMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeInMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.EmployeeInMaster">
+              <MappingFragment StoreEntitySet="EmployeeInMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITConfigSettings">
+            <EntityTypeMapping TypeName="MohsyDBModel.ITConfigSetting">
+              <MappingFragment StoreEntitySet="ITConfigSettings">
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MohsyStaffs">
+            <EntityTypeMapping TypeName="MohsyDBModel.MohsyStaff">
+              <MappingFragment StoreEntitySet="MohsyStaffs">
+                <ScalarProperty Name="TargetAmount" ColumnName="TargetAmount" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MotherTongueMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.MotherTongueMaster">
+              <MappingFragment StoreEntitySet="MotherTongueMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="order" ColumnName="order" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonalDetails">
+            <EntityTypeMapping TypeName="MohsyDBModel.PersonalDetail">
+              <MappingFragment StoreEntitySet="PersonalDetails">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Turnover" ColumnName="Turnover" />
+                <ScalarProperty Name="Gothram" ColumnName="Gothram" />
+                <ScalarProperty Name="Star" ColumnName="Star" />
+                <ScalarProperty Name="Raasi" ColumnName="Raasi" />
+                <ScalarProperty Name="HoroscopeAvailable" ColumnName="HoroscopeAvailable" />
+                <ScalarProperty Name="Manglik" ColumnName="Manglik" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AboutmyFamily" ColumnName="AboutmyFamily" />
+                <ScalarProperty Name="FamilyBusinessTenure" ColumnName="FamilyBusinessTenure" />
+                <ScalarProperty Name="FamilyBusinesstype" ColumnName="FamilyBusinesstype" />
+                <ScalarProperty Name="Mothersoccupation" ColumnName="Mothersoccupation" />
+                <ScalarProperty Name="Fathersoccupation" ColumnName="Fathersoccupation" />
+                <ScalarProperty Name="NOofmarriedSiblings" ColumnName="NOofmarriedSiblings" />
+                <ScalarProperty Name="NoofSiblings" ColumnName="NoofSiblings" />
+                <ScalarProperty Name="FamilyOrigin" ColumnName="FamilyOrigin" />
+                <ScalarProperty Name="FamilyStatus" ColumnName="FamilyStatus" />
+                <ScalarProperty Name="FamilyValues" ColumnName="FamilyValues" />
+                <ScalarProperty Name="FamilyType" ColumnName="FamilyType" />
+                <ScalarProperty Name="Aboutmyself" ColumnName="Aboutmyself" />
+                <ScalarProperty Name="BusinessType" ColumnName="BusinessType" />
+                <ScalarProperty Name="Income" ColumnName="Income" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="NameoftheInstitution" ColumnName="NameoftheInstitution" />
+                <ScalarProperty Name="EducationalQualificationId" ColumnName="EducationalQualificationId" />
+                <ScalarProperty Name="Hobbies" ColumnName="Hobbies" />
+                <ScalarProperty Name="LifeStyle" ColumnName="LifeStyle" />
+                <ScalarProperty Name="DrinkType" ColumnName="DrinkType" />
+                <ScalarProperty Name="Smoking" ColumnName="Smoking" />
+                <ScalarProperty Name="EatingHabit" ColumnName="EatingHabit" />
+                <ScalarProperty Name="SubCaste" ColumnName="SubCaste" />
+                <ScalarProperty Name="Caste" ColumnName="Caste" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="UserDetailsID" ColumnName="UserDetailsID" />
+                <ScalarProperty Name="PersonDetailsID" ColumnName="PersonDetailsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReligionMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.ReligionMaster">
+              <MappingFragment StoreEntitySet="ReligionMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StateMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.StateMaster">
+              <MappingFragment StoreEntitySet="StateMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TemplateMasters">
+            <EntityTypeMapping TypeName="MohsyDBModel.TemplateMaster">
+              <MappingFragment StoreEntitySet="TemplateMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="MohsyDBModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetails">
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpgradeId" ColumnName="UpgradeId" />
+                <ScalarProperty Name="IsUpgraded" ColumnName="IsUpgraded" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CitizenshipId" ColumnName="CitizenshipId" />
+                <ScalarProperty Name="ResidingCity" ColumnName="ResidingCity" />
+                <ScalarProperty Name="ResidingState" ColumnName="ResidingState" />
+                <ScalarProperty Name="ResidingCountryId" ColumnName="ResidingCountryId" />
+                <ScalarProperty Name="LanguagesKnown" ColumnName="LanguagesKnown" />
+                <ScalarProperty Name="MotherTongueId" ColumnName="MotherTongueId" />
+                <ScalarProperty Name="NoofChildren" ColumnName="NoofChildren" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="PhysicalStatus" ColumnName="PhysicalStatus" />
+                <ScalarProperty Name="Complexion" ColumnName="Complexion" />
+                <ScalarProperty Name="BodyType" ColumnName="BodyType" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MatrimonyId" ColumnName="MatrimonyId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserDetailsID" ColumnName="UserDetailsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPhotos">
+            <EntityTypeMapping TypeName="MohsyDBModel.UserPhoto">
+              <MappingFragment StoreEntitySet="UserPhotos">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="UserDetailId" ColumnName="UserDetailId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSettings">
+            <EntityTypeMapping TypeName="MohsyDBModel.UserSetting">
+              <MappingFragment StoreEntitySet="UserSettings">
+                <ScalarProperty Name="ProtectPhotoPwdMode" ColumnName="ProtectPhotoPwdMode" />
+                <ScalarProperty Name="VisibleOnlytoSpecificMembers" ColumnName="VisibleOnlytoSpecificMembers" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="PhotoPassword" ColumnName="PhotoPassword" />
+                <ScalarProperty Name="Visibletoall" ColumnName="Visibletoall" />
+                <ScalarProperty Name="PhotoVisibleonAcceptance" ColumnName="PhotoVisibleonAcceptance" />
+                <ScalarProperty Name="RequestViewPhoto" ColumnName="RequestViewPhoto" />
+                <ScalarProperty Name="EmailAlert" ColumnName="EmailAlert" />
+                <ScalarProperty Name="SMSAlert" ColumnName="SMSAlert" />
+                <ScalarProperty Name="AllNotifications" ColumnName="AllNotifications" />
+                <ScalarProperty Name="WhoShortlistedMe" ColumnName="WhoShortlistedMe" />
+                <ScalarProperty Name="NewMatchingProfile" ColumnName="NewMatchingProfile" />
+                <ScalarProperty Name="WhoViewedProfile" ColumnName="WhoViewedProfile" />
+                <ScalarProperty Name="UserDetailsID" ColumnName="UserDetailsID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
